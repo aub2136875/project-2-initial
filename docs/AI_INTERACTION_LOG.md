@@ -51,3 +51,6 @@ AI GENERATION DOCUMENTATION
 * - Surface area formula verified against: [source]
 
 ## Class 2
+
+## Other Prompts
+Can you review if the classes made follow proper java naming conventions, and that there is a consistent code style across all classes? If not can you offer suggestions to fix that?
