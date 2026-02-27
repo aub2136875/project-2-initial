@@ -1,5 +1,21 @@
 package com.csc205.project2.shapes;
-
+/**
+ * AI GENERATION DOCUMENTATION
+ * ===========================
+ * AI Tool Used: [Claude Sonnet 4.6]
+ * Generation Date: [2/21/26]
+ *
+ * Original Prompt:
+ * "[Would you generate a class in java (Shape3D.java) that implements the ThreeDimensionalShape interface. It must have concrete implementations of getVolume() and getSurfaceArea() that call abstract methods. It must have common properties like name (String) and color (String). It must have constructors for initialization. There must be a toString() method that formats output consistently. It must have appropriate getter/setter methods. This needs to be proper JavaDoc documentation. Include input validation where appropriate.]"
+ *
+ * Follow-up Prompts (if any):
+ * 1. "[What do I do if the code won't compile stating this as an error: "java: duplicate class: com.csc205.project2.shapes.ThreeDimensionalShape"]"
+ *
+ *
+ * Manual Modifications:
+ * - [I ended up deleting the ThreeDimensionalShape interface which the AI put into the same class which helped fix a lot of problems. This was also a suggestion given by the AI.]
+ * - [These changes were necessary because there was more than one ThreeDimensionalShape interfaces which meant that the code couldn't compile properly.]
+ */
 import java.util.Objects;
 
 /**
@@ -296,49 +312,4 @@ public abstract class Shape3D implements ThreeDimensionalShape {
         }
         return trimmed;
     }
-}
-
-
-// =============================================================================
-// ThreeDimensionalShape interface (included for completeness / compilation)
-// =============================================================================
-
-/**
- * Contract that all three-dimensional shapes must fulfill.
- *
- * <p>Implementing classes must provide calculations for volume and surface area,
- * as well as human-readable descriptions of each measurement.</p>
- *
- * @author  Your Name
- * @version 1.0
- */
-interface ThreeDimensionalShape {
-
-    /**
-     * Computes the volume of the shape.
-     *
-     * @return the volume as a non-negative {@code double}
-     */
-    double getVolume();
-
-    /**
-     * Computes the surface area of the shape.
-     *
-     * @return the surface area as a non-negative {@code double}
-     */
-    double getSurfaceArea();
-
-    /**
-     * Returns a human-readable description of the volume.
-     *
-     * @return a formatted volume string
-     */
-    String describeVolume();
-
-    /**
-     * Returns a human-readable description of the surface area.
-     *
-     * @return a formatted surface area string
-     */
-    String describeSurfaceArea();
 }

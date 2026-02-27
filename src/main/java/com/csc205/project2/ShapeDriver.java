@@ -6,11 +6,11 @@ package com.csc205.project2;
  * Generation Date: 2/21/26
  *
  * Original Prompt:
- * "Create a sophisticated ShapeDriver.Java that demonstrates: Polymorphism with an Array/List of Shape3D references that hold different shapes, Comparative Analysis for which shape has the largest volume for given constraints, Interactive Features that allow users to create shapes with custom parameters, and Formatted Output for professional presentation of results."
+ * "[Create a sophisticated ShapeDriver.Java that demonstrates: Polymorphism with an Array/List of Shape3D references that hold different shapes, Comparative Analysis for which shape has the largest volume for given constraints, Interactive Features that allow users to create shapes with custom parameters, and Formatted Output for professional presentation of results.]"
  *
  * Follow-up Prompts (if any):
- * 1. "[Refinement prompt 1]"
- * 2. "[Refinement prompt 2]"
+ * 1. "[This line is not working in ShapeDriver, is there a reason for that and how would I go about fixing that?: "private static final List<Shape3D> shapes = new ArrayList<>();" the error message says "Cannot resolve symbol 'Shape3D']"
+ *
  *
  * Manual Modifications:
  * - Former Line 72, accepted suggestion to import class highlighted by "Shape3D:" private static final List<Shape3D> shapes = new ArrayList<>();

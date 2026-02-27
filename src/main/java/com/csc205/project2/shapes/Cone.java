@@ -9,16 +9,16 @@ package com.csc205.project2.shapes;
  * "Would you create five concrete shape classes: 1 is Sphere where properties include radius, 2 is Cube where properties include sideLength, 3 is Cylinder where properties include radius and height, 4 is RectangularPrism where properties include length width and height, and 5 is cone where properties include radius and height. Each shape class must extend Shape3D which implements ThreeDimensionalShape. They must implement the abstract methods from ThreeDimensionalShape. They must include proper constructors with validation. They must have override toString() with shape specific formatting. Also add any shape-specific methods if needed."
  *
  * Follow-up Prompts (if any):
- * 1. "[Refinement prompt 1]"
- * 2. "[Refinement prompt 2]"
+ * 1. Surprisingly I didn't need any follow-up prompts regarding the different shape classes however there were modifications that were advised while looking through other classes.
+ *
  *
  * Manual Modifications:
- * - [List any changes you made to the AI output]
- * - [Explain why changes were necessary]
+ * - [I replaced the shape classes with updated shape classes from the AI after finding issues within the test classes which I asked for the AI to help resolve.]
+ * - [These changes were necessary because they were required in order to have the test classes run without issues.]
  *
  * Formula Verification:
- * - Volume formula verified against: https://brilliant.org/wiki/volume-cone/
- * - Surface area formula verified against: Google + https://brilliant.org/wiki/surface-area-of-a-cone/#:~:text=The%20surface%20area%20of%20a,also%20called%20the%20lateral%20area.
+ * - Volume formula verified against: [https://brilliant.org/wiki/volume-cone/]
+ * - Surface area formula verified against: [Google + https://brilliant.org/wiki/surface-area-of-a-cone/]
  */
 import java.util.Objects;
 
@@ -211,9 +211,9 @@ public class Cone extends Shape3D {
      * @throws IllegalArgumentException if {@code radius} &le; 0
      */
     public void setRadius(double radius) {
-        if (radius <= 0) {
+        if (!Double.isFinite(radius) || radius <= 0) {
             throw new IllegalArgumentException(
-                    "Cone radius must be > 0, but was: " + radius);
+                    "Cone radius must be a finite positive number, but was: " + radius);
         }
         this.radius = radius;
     }
@@ -234,9 +234,9 @@ public class Cone extends Shape3D {
      * @throws IllegalArgumentException if {@code height} &le; 0
      */
     public void setHeight(double height) {
-        if (height <= 0) {
+        if (!Double.isFinite(height) || height <= 0) {
             throw new IllegalArgumentException(
-                    "Cone height must be > 0, but was: " + height);
+                    "Cone height must be a finite positive number, but was: " + height);
         }
         this.height = height;
     }

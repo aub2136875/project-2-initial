@@ -1,5 +1,20 @@
 package com.csc205.project2.shapes;
-
+/**
+ * AI GENERATION DOCUMENTATION
+ * ===========================
+ * AI Tool Used: [Claude Sonnet 4.6]
+ * Generation Date: [2/21/26]
+ *
+ * Original Prompt:
+ * "[For each shape class, generate JUnit 5 test classes that include: basic functionality including constructor, getters, and setters, Calculation Accuracy for volume and surface area with known values, Boundary Testing for zero values and very small or large numbers, Input Validation for negative values and null inputs, and Inheritance testing with polymorphic behavior verification.]"
+ *
+ * Follow-up Prompts (if any):
+ * 1. "[Here are the issues I got while running the test classes (I copied and pasted the issues), how would I go about fixing these?]"
+ *
+ * Manual Modifications:
+ * - [The solution to the issue above was to replace the shape classes I was using with updated shape classes.]
+ * - [The reason I made those manual modification is because it was advised by the AI in order to fix the problems within the test classes. Here is the AI Response: "The fix is to replace every <= 0 guard with a check that explicitly requires the value to be a finite positive number. This needs to be applied to every setter in all five shape classes."]
+ */
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;

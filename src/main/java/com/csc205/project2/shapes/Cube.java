@@ -9,16 +9,16 @@ package com.csc205.project2.shapes;
  * "Would you create five concrete shape classes: 1 is Sphere where properties include radius, 2 is Cube where properties include sideLength, 3 is Cylinder where properties include radius and height, 4 is RectangularPrism where properties include length width and height, and 5 is cone where properties include radius and height. Each shape class must extend Shape3D which implements ThreeDimensionalShape. They must implement the abstract methods from ThreeDimensionalShape. They must include proper constructors with validation. They must have override toString() with shape specific formatting. Also add any shape-specific methods if needed."
  *
  * Follow-up Prompts (if any):
- * 1. "[Refinement prompt 1]"
- * 2. "[Refinement prompt 2]"
+ * 1. Surprisingly I didn't need any follow-up prompts regarding the different shape classes however there were modifications that were advised while looking through other classes.
+ *
  *
  * Manual Modifications:
- * - [List any changes you made to the AI output]
- * - [Explain why changes were necessary]
+ * - [I replaced the shape classes with updated shape classes from the AI after finding issues within the test classes which I asked for the AI to help resolve.]
+ * - [These changes were necessary because they were required in order to have the test classes run without issues.]
  *
  * Formula Verification:
- * - Volume formula verified against: Given Formula (Mathematical Formulas)
- * - Surface area formula verified against: Given Formula (Mathematical Formulas)
+ * - Volume formula verified against: [Given Formulas (Mathematical Formulas)]
+ * - Surface area formula verified against: [Given Formula (Mathematical Formulas)]
  */
 import java.util.Objects;
 
@@ -179,9 +179,9 @@ public class Cube extends Shape3D {
      * @throws IllegalArgumentException if {@code sideLength} &le; 0
      */
     public void setSideLength(double sideLength) {
-        if (sideLength <= 0) {
+        if (!Double.isFinite(sideLength) || sideLength <= 0) {
             throw new IllegalArgumentException(
-                    "Cube sideLength must be > 0, but was: " + sideLength);
+                    "Cube sideLength must be a finite positive number, but was: " + sideLength);
         }
         this.sideLength = sideLength;
     }
